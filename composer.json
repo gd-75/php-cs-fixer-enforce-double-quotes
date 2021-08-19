@@ -1,0 +1,23 @@
+{
+    "name": "gd-75/php-cs-fixer-enforce-double-quotes",
+    "description": "A rule for PHP CS Fixer to enforce double quotes.",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "GD75\\DoubleQuoteFixer\\": "src"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "scripts": {
+        "php-cs-fixer-dry-run": "./vendor/bin/php-cs-fixer fix  --config .php-cs-fixer.dist.php --dry-run",
+        "php-cs-fixer-dry-run-diff": "./vendor/bin/php-cs-fixer fix  --config .php-cs-fixer.dist.php --diff --dry-run",
+        "php-cs-fixer": "./vendor/bin/php-cs-fixer fix  --config .php-cs-fixer.dist.php"
+    }
+}
