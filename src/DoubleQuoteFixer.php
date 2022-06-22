@@ -96,6 +96,8 @@ final class DoubleQuoteFixer implements FixerInterface
                 $content = str_replace("\\'", "'", $content);
 				// Escape $
                 $content = str_replace("$", "\\$", $content);
+				// Escape \
+                $content = str_replace("\\", "\\\\", $content);
 
                 // Replacing the content in the tokens
                 $tokens->clearAt($index);
