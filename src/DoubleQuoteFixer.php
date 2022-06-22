@@ -92,9 +92,10 @@ final class DoubleQuoteFixer implements FixerInterface
                 // Stripping extremities of the string (removing the two ')
                 $content = substr($content, 1, -1);
 
-                // Removed escaped ' and $
+                // Removed escaped '
                 $content = str_replace("\\'", "'", $content);
-                $content = str_replace("\\$", "$", $content);
+				// Escape $
+                $content = str_replace("$", "\\$", $content);
 
                 // Replacing the content in the tokens
                 $tokens->clearAt($index);
