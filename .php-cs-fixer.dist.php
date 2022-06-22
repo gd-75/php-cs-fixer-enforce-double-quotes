@@ -14,7 +14,8 @@ return (new Config())
     ->setFinder(
         Finder::create()->in(
             [
-                "src"
+                "src",
+                "tests",
             ]
         )->in(__DIR__)
     )

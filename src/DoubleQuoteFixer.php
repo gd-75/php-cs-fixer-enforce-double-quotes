@@ -80,28 +80,25 @@ final class DoubleQuoteFixer implements FixerInterface
              * 1. Starts with '
              * 2. Does not contain any ", if it does, the string might be voluntarily using single quotes to avoid
              *    escaping hell. This would be interesting to be toggleable with an option...
-             * 3. Does not contain any sequence that would be interpreted as an escape sequence by a double-quoted
-             *    string (cf: https://www.php.net/manual/en/language.types.string.php#language.types.string)
              */
             if (
-                "'" === $content[0] &&
-                false === strpos($content, '"') &&
-                // regex: odd number of backslashes, not followed by double quote or dollar
-                !preg_match("/(?<!\\\\)(?:\\\\{2})*\\\\(?!['$\\\\])/", $content)
+                "'" === $content[0]
+                && false === strpos($content, '"')
             ) {
                 // Stripping extremities of the string (removing the two ')
                 $content = substr($content, 1, -1);
 
-                // Removed escaped '
+                // Unescape '
                 $content = str_replace("\\'", "'", $content);
-				// Escape $
-                $content = str_replace("$", "\\$", $content);
-				// Escape \
-                $content = str_replace("\\", "\\\\", $content);
+                // Replace an odd number of backslashes with one extra backslash
+                // (in single quotes, a backslash is just a literal if not followed by a single quote or backslash)
+                $content = preg_replace("/(?<!\\\\)((?:\\\\\\\\)*\\\\)(?!\\\\)/", "\\1\\", $content);
+                // Escape $
+                $content = str_replace("\$", "\\\$", $content);
 
                 // Replacing the content in the tokens
                 $tokens->clearAt($index);
-                $tokens->insertAt($index, new Token("\"$content\""));
+                $tokens->insertAt($index, new Token([T_CONSTANT_ENCAPSED_STRING, "\"$content\""]));
             }
         }
     }
