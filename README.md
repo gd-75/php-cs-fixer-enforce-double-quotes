@@ -26,17 +26,15 @@ $config
     );
 
 ```
-## Examples of strings that will be fixed and string that will be ignored
-### Will be ignored
-- `'He was saying "Don't you think that is weird?"'` => Keeps single quotes to avoid escaping inside the string
-- `'Use \p to introduce a magic character'` => `\p` would be interpreted as an escape sequence
-### Will be transformed
-- `'Hello Mr World'` => Will be converted to `"Hello Mr World"`
 
 > ### Warning
 > Before auto-fixing quotes on your project, please run a dry-run with diffs to make sure the fixer works correctly.
 
+## Contributors
+I'd like to thank the people who spend time to improve the project !
+
+
+- Androl Genhald (tests & improvements on supported strings)
+
 ## TO-DO
-- Add tests
-- Maybe rework the fix method to support more complex strings and improve general efficiency
 - Create a configuration for the allowance of single quoted strings when it contains a double quote

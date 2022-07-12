@@ -4,6 +4,7 @@
  *
  * Copyright (c) 2021 Noah Boegli (adaptation to new fixer interface, comments & improvements)
  * Copyright (c) 2015 Fabien Potencier (for the base code used inside the loop, see details lines 54-68)
+ * Contributors: Androl Genhald (improvements on supported strings)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
