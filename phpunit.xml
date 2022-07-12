@@ -23,5 +23,9 @@
         <include>
             <directory suffix=".php">src</directory>
         </include>
+        <report>
+            <cobertura outputFile="tests/coverage_data/cobertura.xml"/>
+            <text outputFile="tests/coverage_data/code_coverage.txt" showUncoveredFiles="true"/>
+        </report>
     </coverage>
 </phpunit>

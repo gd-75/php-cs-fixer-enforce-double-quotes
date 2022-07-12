@@ -1,3 +1,5 @@
+[![gd-75/php-cs-fixer-enforce-double-quotes](https://github.com/gd-75/php-cs-fixer-enforce-double-quotes/actions/workflows/tests.yml/badge.svg)](https://github.com/gd-75/php-cs-fixer-enforce-double-quotes/actions/workflows/tests.yml)
+
 # php-cs-fixer-enforce-double-quotes
 A rule for PHP CS Fixer to enforce double quotes.
 
