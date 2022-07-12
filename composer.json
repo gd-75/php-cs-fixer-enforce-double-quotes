@@ -18,6 +18,7 @@
         "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.2"
     },
     "scripts": {
+        "tests": "XDEBUG_MODE=coverage ./vendor/bin/phpunit",
         "php-cs-fixer-dry-run": "./vendor/bin/php-cs-fixer fix  --config .php-cs-fixer.dist.php --dry-run",
         "php-cs-fixer-dry-run-diff": "./vendor/bin/php-cs-fixer fix  --config .php-cs-fixer.dist.php --diff --dry-run",
         "php-cs-fixer": "./vendor/bin/php-cs-fixer fix  --config .php-cs-fixer.dist.php"
